@@ -1,0 +1,207 @@
+<%- include('../layout/ui_header.ejs') %>
+    <!-- Page Title -->
+    <div class="page-title-area page-title-five">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="page-title-item">
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <i class="icofont-simple-right"></i>
+                        </li>
+                        <li>Contact us</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Location -->
+    <div class="location-area">
+        <div class="container">
+            <div class="row location-wrap">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="location-item">
+                        <i class="icofont-location-pin"></i>
+                        <h3>Location</h3>
+                        <p style="max-width: 300px;">
+                            <%= siteSettings[0].address %>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="location-item">
+                        <i class="icofont-ui-message"></i>
+                        <h3>Email</h3>
+                        <ul>
+                            <li>
+                                <a href="mailto:<%= siteSettings[0].email %>">
+                                    <%= siteSettings[0].email %>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6   col-lg-4">
+                    <div class="location-item">
+                        <i class="icofont-ui-call"></i>
+                        <h3>Phone</h3>
+                        <ul>
+                            <li>
+                                <a href="tel:+919811884062">+<%= siteSettings[0].number %></a>
+                            </li>
+                            <li>
+                                <a href="tel:+919729017553">+919729017553,</a>
+                            </li>
+                            <li>
+                                <a href="tel:+919813379592">+919813379592</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Location -->
+
+    <!-- Drop -->
+    <section class="drop-area pt-100">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="appointment-item appointment-item-two">
+                        <div class="appointment-shape">
+                            <img src="assets/img/appointment/3.png" alt="Shape" />
+                        </div>
+                        <h2>Book your appointment</h2>
+                        <span>We will confirm your appointment within 2 hours</span>
+
+                        <% if (message) { %>
+                            <div class="alert <%= message.includes('success') ? 'alert-success' : 'alert-danger' %>">
+                                <%= message %>
+                            </div>
+                            <% } %>
+                                <div class="appointment-form">
+                                    <form action="/appointment" method="POST">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <i class="icofont-business-man-alt-1"></i>
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter Your Name" name="name" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <i class="icofont-ui-message"></i>
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control"
+                                                        placeholder="Enter Your Email" name="email" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <i class="icofont-ui-call"></i>
+                                                    <label>Phone</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Enter Your Number" name="phone" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <i class="icofont-hospital"></i>
+                                                    <label>Services</label>
+                                                    <select class="form-control px-1" name="services" required>
+                                                        <option value="">Select a Service</option>
+                                                        <% services.forEach(service=> { %>
+                                                            <option value="<%= service.title %>">
+                                                                <%= service.title %>
+                                                            </option>
+                                                            <% }); %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <i class="icofont-doctor"></i>
+                                                    <label>Doctor</label>
+                                                    <select class="form-control px-1" name="doctor" required>
+                                                        <option value="">Choose Your Doctor</option>
+                                                        <% doctors.forEach(doctor=> { %>
+                                                            <option value="<%= doctor.name %>">
+                                                                <%= doctor.name %>
+                                                            </option>
+                                                            <% }); %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <i class="icofont-business-man"></i>
+                                                    <label>Age</label>
+                                                    <input type="text" class="form-control" placeholder="Your Age"
+                                                        name="age" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn appointment-btn">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 p-0">
+                    <div class="speciality-item speciality-right speciality-right-two speciality-right-three">
+                        <img src="assets/img/home-two/4.jpg" alt="Contact">
+                        <div class="speciality-emergency">
+                            <div class="speciality-icon">
+                                <i class="icofont-ui-call"></i>
+                            </div>
+                            <h3>Emergency Call</h3>
+                            <a href="tel:<%= siteSettings[0].number %>">
+                                <%= siteSettings[0].number %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Drop -->
+
+    <!-- Map -->
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13975.448384716572!2d76.88665278715821!3d28.87271959999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390da317978e2b6b%3A0xd456c30718a409df!2sDELHI%20HOSPITAL!5e0!3m2!1sen!2sin!4v1733301228282!5m2!1sen!2sin"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe> <!-- End Map -->
+
+    <!-- Footer -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Meanmenu JS -->
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <!-- Slider Slider JS -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Form Ajaxchimp JS -->
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Form Validator JS -->
+    <script src="assets/js/form-validator.min.js"></script>
+    <!-- Contact JS -->
+    <script src="assets/js/contact-form-script.js"></script>
+    <!-- Odometer JS -->
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+    <%- include("../layout/ui_footer.ejs") %>

@@ -1,0 +1,243 @@
+<%- include('../layout/ui_header.ejs') %>
+    <!-- Page Title -->
+    <div class="page-title-area page-title-three">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="page-title-item-two">
+                    <h2><%= doctor.name %></h2>
+                    <p><%= doctor.specialist %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title -->
+
+    <!-- Doctor Details -->
+    <div class="doctor-details-area pb-70">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="doctor-details-item doctor-details-left">\\
+                        <img src="/uploads/<%= doctor.doctorImage %>" alt="Doctor">
+                        <div class="doctor-details-contact">
+                            <h2>
+                                <%= doctor.name %>
+                            </h2>
+                            <p>
+                                <%= doctor.specialist %>
+                            </p>
+                        </div>
+                        <div class="doctor-details-work">
+                            <h3>Working hours</h3>
+                            <div class="appointment-item-two-right">
+                                <div class="appointment-item-content">
+                                    <div class="content-one">
+                                        <ul>
+                                            <li>Monday</li>
+                                            <li>Tuesday</li>
+                                            <li>Wednesday</li>
+                                            <li>Sunday</li>
+                                        </ul>
+                                    </div>
+                                    <div class="content-two">
+                                        <ul>
+                                            <li>9:00 am - 8:00 pm</li>
+                                            <li>9:00 am - 8:00 pm</li>
+                                            <li>9:00 am - 8:00 pm</li>
+                                            <li>9:00 am - 8:00 pm</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="doctor-details-item">
+                        <div class="doctor-details-right pt-3">
+                            <%- doctor.description %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Doctor Details -->
+
+    <!-- Appointment -->
+    <div class="appointment-area-three">
+        <div class="container-fluid p-0">
+            <div class="row m-0">
+                <div class="col-lg-7">
+                    <div class="appointment-item appointment-item-two">
+                        <div class="appointment-shape">
+                            <img src="/assets/img/appointment/3.png" alt="Shape">
+                        </div>
+                        <h2>Book your appointment</h2>
+                        <span>We will confirm your appointment within 2 hours</span>
+                        <div class="appointment-form">
+                            <!-- <form>
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <i class="icofont-business-man-alt-1"></i>
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" placeholder="Enter Your Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <i class="icofont-ui-message"></i>
+                                                <label>Email</label>
+                                                <input type="email" class="form-control" placeholder="Enter Your Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <i class="icofont-ui-call"></i>
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control" placeholder="Enter Your Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <i class="icofont-hospital"></i>
+                                                <label>Services</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option>Dental Care</option>
+                                                    <option>Pathology</option>
+                                                    <option>Diagnosis</option>
+                                                    <option>Neurology</option>
+                                                    <option>Cardiology</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <i class="icofont-doctor"></i>
+                                                <label>Doctor</label>
+                                                <input type="text" class="form-control" placeholder="Choose Your Doctor">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <i class="icofont-business-man"></i>
+                                                <label>Age</label>
+                                                <input type="text" class="form-control" placeholder="Your Age">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn appointment-btn">Submit</button>
+                                    </div>
+                                </form> -->
+
+                            <form action="/doctor-details" method="POST">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="icofont-business-man-alt-1"></i>
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter Your Name"
+                                                name="name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="icofont-ui-message"></i>
+                                            <label>Email</label>
+                                            <input type="email" class="form-control" placeholder="Enter Your Email"
+                                                name="email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="icofont-ui-call"></i>
+                                            <label>Phone</label>
+                                            <input type="text" class="form-control" placeholder="Enter Your Number"
+                                                name="phone" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="icofont-hospital"></i>
+                                            <label>Services</label>
+                                            <select class="form-control px-1" name="services" required>
+                                                <option value="">Select a Service</option>
+                                                <% services.forEach(service=> { %>
+                                                    <option value="<%= service.title %>">
+                                                        <%= service.title %>
+                                                    </option>
+                                                    <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="icofont-doctor"></i>
+                                            <label>Doctor</label>
+                                            <select class="form-control px-1" name="doctor" required>
+                                                <option value="">Choose Your Doctor</option>
+                                                <% doctors.forEach(doctor=> { %>
+                                                    <option value="<%= doctor.name %>">
+                                                        <%= doctor.name %>
+                                                    </option>
+                                                    <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <i class="icofont-business-man"></i>
+                                            <label>Age</label>
+                                            <input type="text" class="form-control" placeholder="Your Age" name="age" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn appointment-btn">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 pr-0">
+                    <div class="speciality-item speciality-right speciality-right-two speciality-right-three">
+                        <img src="assets/img/doctor/4.jpg" alt="Doctor">
+                        <div class="speciality-emergency">
+                            <div class="speciality-icon">
+                                <i class="icofont-ui-call"></i>
+                            </div>
+                            <h3>Emergency Call</h3>
+                            <a href="tel:+07554332322">+07 554 332 322</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Appointment -->
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Meanmenu JS -->
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <!-- Slider Slider JS -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Form Ajaxchimp JS -->
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Form Validator JS -->
+    <script src="assets/js/form-validator.min.js"></script>
+    <!-- Contact JS -->
+    <script src="assets/js/contact-form-script.js"></script>
+    <!-- Odometer JS -->
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+    <%- include("../layout/ui_footer.ejs") %>

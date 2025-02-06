@@ -1,0 +1,69 @@
+<%- include('../layout/ui_header.ejs') %>
+<!-- Page Title -->
+<div class="page-title-area page-title-four">
+  <div class="d-table">
+    <div class="d-table-cell">
+      <div class="page-title-item">
+        <h2>Departments</h2>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <i class="icofont-simple-right"></i>
+          </li>
+          <li>Departments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page Title -->
+
+<!-- Departments -->
+<section class="departments-area pt-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <% departments.forEach((department) => { %>
+      <div class="col-sm-6 col-lg-4 h-100">
+        <div class="department-item h-100">
+          <img
+            height="50px"
+            class="department_image"
+            src="/uploads/<%= department.departmentImage %>"
+            alt="department"
+          />
+          <div class="py-2">
+            <h3><%= department.title %></h3>
+            <p><%- department.description %></p>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<!-- End Departments -->
+
+<!-- Footer -->
+<script src="assets/js/owl.carousel.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="assets/js/jquery.meanmenu.js"></script>
+<!-- Slider Slider JS -->
+<script src="assets/js/slick.min.js"></script>
+<!-- Magnific Popup -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Wow JS -->
+<script src="assets/js/wow.min.js"></script>
+<!-- Form Ajaxchimp JS -->
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Form Validator JS -->
+<script src="assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="assets/js/contact-form-script.js"></script>
+<!-- Odometer JS -->
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/custom.js"></script>
+<%- include("../layout/ui_footer.ejs") %>

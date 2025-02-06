@@ -1,0 +1,130 @@
+<%- include('../layout/ui_header.ejs') %>
+<!-- Page Title -->
+<div class="page-title-area page-title-one">
+  <div class="d-table">
+    <div class="d-table-cell">
+      <div class="page-title-item">
+        <h2>Meet Our Qualified Doctors</h2>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <i class="icofont-simple-right"></i>
+          </li>
+          <li>Doctors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page Title -->
+
+<!-- Doctor Search -->
+<div class="doctor-search-area">
+  <div class="container">
+    <form>
+      <div class="row doctor-search-wrap">
+        <div class="col-sm-6 col-lg-6">
+          <div class="doctor-search-item">
+            <div class="form-group">
+              <i class="icofont-doctor-alt"></i>
+              <label>Search</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Doctor Name"
+              />
+            </div>
+            <button type="submit" class="btn doctor-search-btn">
+              <i class="icofont-search-1"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-6">
+          <div class="doctor-search-item">
+            <div class="form-group">
+              <i class="icofont-hospital"></i>
+              <label>Category</label>
+              <select class="form-control">
+                <option>Neurosurgeon</option>
+                <option>Cardiology</option>
+                <option>Pathology</option>
+                <option>Dental Care</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End Doctor Search -->
+
+<!-- Doctors -->
+<section class="doctors-area doctors-area-two pt-100">
+  <div class="doctor-shape">
+    <img src="assets/img/doctor/2.png" alt="Shape" />
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <% doctors.forEach((doctor, index) => { %>
+      <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+        <div class="doctor-item">
+          <div class="doctor-top">
+            <img 
+              class="w-100 meet_doctor_img"
+              src="/uploads/<%= doctor.doctorImage %>"
+              alt="Doctor"
+            />
+            <a href="/appointment">Get Appointment</a>
+          </div>
+          <div class="doctor-bottom">
+            <h3>
+              <a href="/doctor-details/<%= doctor.id  %>"><%= doctor.name %></a>
+            </h3>
+            <span><%= doctor.specialist %></span>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+      <!-- <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="doctor-item">
+                            <div class="doctor-top">
+                                <img src="assets/img/home-one/doctor/1.jpg" alt="Doctor">
+                                <a href="/appointment">Get Appointment</a>
+                            </div>
+                            <div class="doctor-bottom">
+                                <h3>
+                                    <a href="/doctor-details">Dr. Babatunde</a>
+                                </h3>
+                                <span>Neurosurgeon</span>
+                            </div>
+                        </div>
+                    </div> -->
+    </div>
+  </div>
+</section>
+<!-- End Doctors -->
+
+<script src="assets/js/owl.carousel.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="assets/js/jquery.meanmenu.js"></script>
+<!-- Slider Slider JS -->
+<script src="assets/js/slick.min.js"></script>
+<!-- Magnific Popup -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Wow JS -->
+<script src="assets/js/wow.min.js"></script>
+<!-- Form Ajaxchimp JS -->
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Form Validator JS -->
+<script src="assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="assets/js/contact-form-script.js"></script>
+<!-- Odometer JS -->
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/custom.js"></script>
+<%- include("../layout/ui_footer.ejs") %>

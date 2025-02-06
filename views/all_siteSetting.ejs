@@ -1,0 +1,92 @@
+<%- include("./layout/admin_header.ejs") %>
+<div class="container mt-4">
+  <h2 class="text-center"><%= title %></h2>
+  <form action="/admin/siteSetting" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        value="<%= settings ? settings.email : '' %>"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <textarea
+        class="form-control"
+        id="address"
+        name="address"
+        rows="2"
+        required
+      ><%= settings ? settings.address : '' %></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="number" class="form-label">Phone Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="number"
+        name="number"
+        value="<%= settings ? settings.number : '' %>"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="facebook" class="form-label">Facebook</label>
+      <input
+        type="url"
+        class="form-control"
+        id="facebook"
+        name="facebook"
+        value="<%= settings ? settings.facebook : '' %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="twitter" class="form-label">Twitter</label>
+      <input
+        type="url"
+        class="form-control"
+        id="twitter"
+        name="twitter"
+        value="<%= settings ? settings.twitter : '' %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="pinterest" class="form-label">Pinterest</label>
+      <input
+        type="url"
+        class="form-control"
+        id="pinterest"
+        name="pinterest"
+        value="<%= settings ? settings.pinterest : '' %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="instagram" class="form-label">Instagram</label>
+      <input
+        type="url"
+        class="form-control"
+        id="instagram"
+        name="instagram"
+        value="<%= settings ? settings.instagram : '' %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="logo" class="form-label">Logo</label>
+      <input type="file" class="form-control" id="logo" name="logo" />
+      <% if (settings && settings.logo) { %>
+        <img
+          src="/uploads/<%= settings.logo %>"
+          alt="Logo"
+          class="mt-2"
+          width="150"
+        />
+      <% } %>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+<%- include("./layout/admin_footer.ejs") %>

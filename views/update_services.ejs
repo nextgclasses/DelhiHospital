@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= title %>
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.datatables.net/v/bs5/dt-2.1.8/datatables.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+
+<body>
+  <section class="vh-100 d-flex flex-column">
+    <nav class="d-flex justify-content-between align-items-center navbar px-sm-3 px-2 py-3 bg-dark">
+      <div class="d-flex align-items-center gap-2">
+        <div onclick="toggleSidebar()" class="d-lg-none d-flex flex-column justify-content-between toggle_icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <a class="text-white" href="/admin/dashboard"><img height="45" width="45" class="w-100"
+            src="/assets/img/DH logo.jpg" alt="logo"></a>
+      </div>
+      <a class="text-white d-flex align-items-center gap-2" href="/admin/logout">Logout<i
+          class="fa-solid fa-right-from-bracket pt-1"></i></a>
+    </nav>
+    <div class="flex-grow-1 overflow-hidden">
+      <div class="row h-100 overflow-hidden">
+        <div class="col-xl-2 h-100 col-lg-3 px-0 overflow_scroll sidebar_col bg-light">
+          <div class="sidebar">
+            <div class="accordion overflow_x_hidden" id="accordionExample">
+
+              <a href="/admin/dashboard"
+                class="d-flex bg-white mb-2 justify-content-start w-100 ps-xl-5 align-items-center py-2">
+                <i class="fa-solid fa-house"></i>Dashboard
+              </a>
+              <a href="/admin/siteSetting"
+                class="d-flex bg-white mb-2 justify-content-start  w-100 ps-xl-5 align-items-center py-2">
+                <i class="fas fa-cogs"></i>Site Setting
+              </a>
+              <a href="/admin/allAppointment"
+                class="d-flex bg-white mb-2 justify-content-start  w-100 ps-xl-5 align-items-center py-2">
+                <i class="fas fa-cogs"></i>Appointments
+              </a>
+              <a href="/admin/allLandingAppointment"
+                class="d-flex bg-white mb-2 justify-content-start  w-100 ps-xl-5 align-items-center py-2">
+                <i class="fas fa-cogs"></i>Landing Appointments
+              </a>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <span
+                    class="accordion-button collapsed d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                    aria-controls="collapseTwo">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fas fa-sliders"></i>
+                      Testimonial</div>
+
+                  </span>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingTwo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addTestimonial" class="sub-item">Add Testimonial</a>
+                    <a href="/admin/allTestimonial" class="sub-item">All Testimonial</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingdemo">
+                  <span
+                    class="accordion-button collapsed d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapsedemo" aria-expanded="false"
+                    aria-controls="collapsedemo">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fas fa-sliders"></i>
+                      Pages</div>
+
+                  </span>
+                </h2>
+                <div id="collapsedemo" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingdemo"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/add-page" class="sub-item">Add Page</a>
+                    <a href="/admin/all-pages" class="sub-item">All Pages</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingtwelve">
+                  <span
+                    class="accordion-button collapsed d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTweleve" aria-expanded="false"
+                    aria-controls="collapseTweleve">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fas fa-sliders"></i>
+                      Department</div>
+
+                  </span>
+                </h2>
+                <div id="collapseTweleve" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingtwelve"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addDepartment" class="sub-item">Add Department</a>
+                    <a href="/admin/allDepartments" class="sub-item">All Department</a>
+                  </div>
+                </div>
+              </div>
+              <!-- More accordion items -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <span
+                    class="accordion-button collapsed d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fa-brands fa-servicestack"></i>
+                      Services</div>
+                  </span>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingThree"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addServices" class="sub-item">Add Services</a>
+                    <a href="/admin/allServices" class="sub-item">All Services</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <span
+                    class="accordion-button collapsed d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                    aria-controls="collapseFour">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fas fa-pagelines"></i>
+                      Blog</div>
+                  </span>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addBlog" class="sub-item">Add Blog</a>
+                    <a href="/admin/allBlogs" class="sub-item">All Blog</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                  <span
+                    class="accordion-button collapsed d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false"
+                    aria-controls="collapseSeven">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i
+                        class="fa-solid fa-universal-access"></i>
+                      Doctors</div>
+                  </span>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingSeven"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addDoctor" class="sub-item">Add Doctor</a>
+                    <a href="/admin/allDoctors" class="sub-item">All Doctor</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <span
+                    class="accordion-button collapsed  d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                    aria-controls="collapseFive">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fa-solid fa-image"></i>
+                      Sliders</div>
+                  </span>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingFive"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addSlider" class="sub-item">Add Slider</a>
+                    <a href="/admin/allSliders" class="sub-item">All Slider</a>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingNine">
+                  <span
+                    class="accordion-button collapsed  d-flex  align-items-center justify-content-between pe-2 ps-xl-5 py-2"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false"
+                    aria-controls="collapseNine">
+                    <div class="d-flex align-content-center gap-3 fw-medium"><i class="fa-solid fa-video"></i>
+                      Landing Sliders</div>
+                  </span>
+                </h2>
+                <div id="collapseNine" class="accordion-collapse collapse ps-xl-5" aria-labelledby="headingNine"
+                  data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <a href="/admin/addLandingSlider" class="sub-item">Add Landing Slider</a>
+                    <a href="/admin/allLandingSliders" class="sub-item">All Landing Sliders</a>
+                  </div>
+                </div>
+              </div>
+              <a href="/admin/logout"
+                class="d-flex bg-white my-2 justify-content-start  w-100 ps-xl-5 align-items-center py-2">
+                <i class="fa-solid fa-calendar-check"></i>Logout
+              </a>
+
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-xl-10 col-lg-9  h-100 col-12 mb-3 overflow_scroll d-flex">
+          <div class="card shadow-lg bg-white">
+            <div class="card-header bg-primary text-white text-center">
+              <h3>Update Service</h3>
+            </div>
+            <div class="card-body bg-white">
+              <!-- Start of the form -->
+              <form id="serviceForm" class="bg-white" action="/admin/updateServices/<%= service._id %>" method="POST"
+                enctype="multipart/form-data">
+                <!-- Title Field -->
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title" placeholder="Enter service title"
+                    value="<%= service.title || '' %>" required />
+                </div>
+
+                <!-- Description Field -->
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea class="form-control" id="description" name="description" placeholder="Enter  Description"
+                    rows="5" required><%= service.description || '' %></textarea>
+                </div>
+
+                <!-- Service Image Upload Field -->
+                <div class="mb-3">
+                  <label for="servicesImage" class="form-label">Service Image</label>
+                  <input type="file" class="form-control" id="servicesImage" name="servicesImage" accept=".jpg,.png" />
+                  <div class="form-text">
+                    Upload a new image to update (JPG/PNG). Leave blank to keep the current image.
+                  </div>
+                  <% if (service.image) { %>
+                    <div class="mt-3">
+                      <img src="/uploads/<%= service.image %>" alt="Current Service Image" class="img-thumbnail"
+                        style="width: 100px; height: 100px" />
+                      <p class="text-muted">Current Image</p>
+                    </div>
+                    <% } %>
+                </div>
+                <!-- SEO Title Input -->
+                <div class="mb-3">
+                  <label for="seoTitle" class="form-label">SEO Title</label>
+                  <input type="text" name="seoTitle" class="form-control" id="seoTitle"  value="<%= service.seoTitle || '' %>" placeholder="Enter SEO Title">
+                </div>
+                
+                <!-- SEO Keywords Input -->
+                <div class="mb-3">
+                  <label for="seoKeywords" class="form-label">SEO Keywords</label>
+                  <input type="text" name="seoKeywords" class="form-control" id="seoKeywords" value="<%= service.seoKeywords || '' %>"  placeholder="Enter SEO Keywords">
+                </div>
+                
+                <!-- SEO Description Input (with TinyMCE Editor) -->
+                <div class="mb-3">
+                  <label for="seoDescription" class="form-label">SEO Description</label>
+                  <textarea name="seoDescription" class="form-control" id="seoDescription" rows="1"
+                    placeholder="Enter SEO Description"><%= service.seoDescription || '' %></textarea>
+
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary px-4">Update</button>
+                </div>
+              </form>
+              <!-- End of the form -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Include CKEditor -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/35.3.0/classic/ckeditor.js"></script>
+  <!-- Include CKEditor script -->
+  <script>
+    // Initialize CKEditor
+    let editor;
+
+    ClassicEditor
+      .create(document.querySelector('#description'))
+      .then(newEditor => {
+        editor = newEditor;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    // Ensure that CKEditor content is transferred to the textarea before form submission
+    const form = document.querySelector('#blogForm');
+    form.addEventListener('submit', (event) => {
+      // Update the textarea with CKEditor's data before submission
+      const descriptionTextarea = document.querySelector('#description');
+      descriptionTextarea.value = editor.getData();
+    });
+  </script>
+
+  <!-- Include the admin footer -->
+  <%- include("./layout/admin_footer.ejs") %>

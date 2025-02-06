@@ -1,0 +1,259 @@
+<%- include('../layout/ui_header.ejs') %>
+<!-- Page Title -->
+<div class="page-title-area page-title-four">
+  <div class="d-table">
+    <div class="d-table-cell">
+      <div class="page-title-item">
+        <h2>Service</h2>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <i class="icofont-simple-right"></i>
+          </li>
+          <li>Service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page Title -->
+
+<!-- Services -->
+<section class="services-area pt-5 pb-70">
+  <div class="container">
+    <div class="row justify-content-center">
+      <% services.forEach((service) => { %>
+      <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
+        <div class="service-item">
+          <div class="service-front">
+            <!-- <i class="icofont-doctor"></i> -->
+            <img
+              height="50px"
+              width="50"
+              src="/uploads/<%= service.servicesImage %>"
+              alt="Services"
+            />
+            <h3><%= service.title %></h3>
+            <p><%- service.description %></p>
+          </div>
+          <div class="service-end">
+            <img
+              height="50px"
+              width="50"
+              src="/uploads/<%= service.servicesImage %>"
+              alt="Services"
+            />
+            <h3><%= service.title %></h3>
+            <p><%- service.description %></p>
+            <a href="/service-details/<%= service.id  %>">Read More</a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<!-- End Services -->
+
+<!-- Expertise -->
+<section class="expertise-area pb-70">
+  <div class="container">
+    <div class="section-title">
+      <h2>Facility Available</h2>
+    </div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-6">
+        <div class="expertise-item">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+              <a href="/blog-details">
+                <div class="expertise-inner">
+                  <i class="icofont-doctor-alt"></i>
+                  <h3>Certified Doctors</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+              <a href="/blog-details">
+                <div class="expertise-inner">
+                  <i class="icofont-stretcher"></i>
+                  <h3>Emergency</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+              <a href="/blog-details">
+                <div class="expertise-inner">
+                  <i class="icofont-network"></i>
+                  <h3>Teachnology</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+              <a href="/blog-details">
+                <div class="expertise-inner">
+                  <i class="icofont-ambulance-cross"></i>
+                  <h3>Ambulance</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="expertise-item">
+          <div class="expertise-right">
+            <img src="assets/img/home-one/6.jpg" alt="Expertise" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Expertise -->
+
+<!-- Blog -->
+<section class="blog-area pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Latest Blogs</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+        <div class="blog-item">
+          <div class="blog-top">
+            <a href="/blog-details">
+              <img src="assets/img/home-one/11.jpg" alt="Blog" />
+            </a>
+          </div>
+          <div class="blog-bottom">
+            <h3>
+              <a href="/blog-details"
+                >In this hospital, there are specialized surgeons.</a
+              >
+            </h3>
+            <p>
+              Our hospital is renowned for its team of highly trained surgeons
+              who specialize in advanced and complex procedures.
+            </p>
+            <ul>
+              <li>
+                <a href="/blog-details">
+                  Read More
+                  <i class="icofont-long-arrow-right"></i>
+                </a>
+              </li>
+              <li>
+                <i class="icofont-calendar"></i>
+                Jan 03, 2024
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
+        <div class="blog-item">
+          <div class="blog-top">
+            <a href="/blog-details">
+              <img src="assets/img/home-one/11.jpg" alt="Blog" />
+            </a>
+          </div>
+          <div class="blog-bottom">
+            <h3>
+              <a href="/blog-details"
+                >World AIDS Day: Raising Awareness and Hope.</a
+              >
+            </h3>
+            <p>
+              Observed on December 1st, World AIDS Day highlights the global
+              effort to combat HIV/AIDS and support those living with the
+              condition.
+            </p>
+            <ul>
+              <li>
+                <a href="/blog-details">
+                  Read More
+                  <i class="icofont-long-arrow-right"></i>
+                </a>
+              </li>
+              <li>
+                <i class="icofont-calendar"></i>
+                Jan 03, 2024
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".7s">
+        <div class="blog-item">
+          <div class="blog-top">
+            <a href="/blog-details">
+              <img src="assets/img/home-one/11.jpg" alt="Blog" />
+            </a>
+          </div>
+          <div class="blog-bottom">
+            <h3>
+              <a href="/blog-details"
+                >Over 80 Clinical Trials Launched for Coronavirus.</a
+              >
+            </h3>
+            <p>
+              Scientists and medical teams worldwide are testing innovative
+              solutions to combat the coronavirus pandemic through clinical
+              trials.
+            </p>
+            <ul>
+              <li>
+                <a href="/blog-details">
+                  Read More
+                  <i class="icofont-long-arrow-right"></i>
+                </a>
+              </li>
+              <li>
+                <i class="icofont-calendar"></i>
+                Jan 03, 2024
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Blog -->
+
+<script src="assets/js/owl.carousel.min.js"></script>
+<!-- Meanmenu JS -->
+<script src="assets/js/jquery.meanmenu.js"></script>
+<!-- Slider Slider JS -->
+<script src="assets/js/slick.min.js"></script>
+<!-- Magnific Popup -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- Wow JS -->
+<script src="assets/js/wow.min.js"></script>
+<!-- Form Ajaxchimp JS -->
+<script src="assets/js/jquery.ajaxchimp.min.js"></script>
+<!-- Form Validator JS -->
+<script src="assets/js/form-validator.min.js"></script>
+<!-- Contact JS -->
+<script src="assets/js/contact-form-script.js"></script>
+<!-- Odometer JS -->
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/jquery.appear.min.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/custom.js"></script>
+<%- include("../layout/ui_footer.ejs") %>

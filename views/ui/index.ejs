@@ -1,0 +1,531 @@
+<%- include('../layout/ui_header.ejs') %>
+
+  <!-- Home Slider -->
+  <div class="home-slider owl-theme owl-carousel position-relative z-0">
+    <% sliders.forEach((slider, index)=> { %>
+      <div class="slider-item slider-item-img">
+        <div class="d-table">
+          <div class="d-table-cell">
+            <div class="container">
+              <div class="slider-text">
+                <div class="slider-shape">
+                  <!-- If the slider has a unique image, use it dynamically -->
+                  <img src="/uploads/<%= slider.sliderImage %>" alt="Shape" />
+                </div>
+                <h1>
+                  <%= slider.title %>
+                </h1>
+                <p><%- slider.description %></p>
+                <div class="common-btn">
+                  <a href="/appointment">Get Appointment</a>
+                  <a class="cmn-btn-right" href="/about">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+
+        <!-- <div class="slider-item slider-item-img">
+        <div class="d-table">
+          <div class="d-table-cell">
+            <div class="container">
+              <div class="slider-text">
+                <div class="slider-shape-two">
+                  <img
+                    src="assets/img/home-one/home-slider/2.png"
+                    alt="Shape"
+                  />
+                </div>
+                <h1>Caring Health is Important Than All</h1>
+                <p>
+                  At our hospital, we believe that caring for your health is the
+                  greatest priority. With a compassionate approach and advanced
+                  medical care, we are here to support your journey to wellness
+                  every step of the way.
+                </p>
+                <div class="common-btn">
+                  <a href="/appointment">Get Appointment</a>
+                  <a class="cmn-btn-right" href="/about">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-item slider-item-img">
+        <div class="d-table">
+          <div class="d-table-cell">
+            <div class="container">
+              <div class="slider-text">
+                <div class="slider-shape-three">
+                  <img
+                    src="assets/img/home-one/home-slider/3.png"
+                    alt="Shape"
+                  />
+                </div>
+                <h1>We Offer Highly Treatments</h1>
+                <p>
+                  Our hospital is equipped with state-of-the-art technology and
+                  a team of expert medical professionals dedicated to offering
+                  the highest standard of care. From diagnosis to recovery, we
+                  provide personalized treatments to ensure the best outcomes
+                  for our patients.
+                </p>
+                <div class="common-btn">
+                  <a href="/appointment">Get Appointment</a>
+                  <a class="cmn-btn-right" href="/about">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+  </div>
+  <!-- End Home Slider -->
+
+  <!-- Counter -->
+  <div class="counter-area">
+    <div class="container">
+      <div class="row counter-bg">
+        <div class="col-sm-6 col-md-3 col-lg-3">
+          <div class="counter-item">
+            <i class="icofont-patient-bed"></i>
+            <h3>
+              <span class="odometer" data-count="850">00</span>
+            </h3>
+            <p>Patients Beds</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3">
+          <div class="counter-item">
+            <i class="icofont-people"></i>
+            <h3>
+              <span class="odometer" data-count="2500">00</span>
+              <span class="target">+</span>
+            </h3>
+            <p>Happy Patients</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3">
+          <div class="counter-item">
+            <i class="icofont-doctor-alt"></i>
+            <h3>
+              <span class="odometer" data-count="750">00</span>
+            </h3>
+            <p>Doctors & Nurse</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-3">
+          <div class="counter-item">
+            <i class="icofont-badge"></i>
+            <h3>
+              <span class="odometer" data-count="18">00</span>
+            </h3>
+            <p>Year Experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Counter -->
+
+  <!-- About -->
+  <div class="about-area pt-100 pb-70">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6">
+          <div class="about-item">
+            <div class="about-left">
+              <img src="/assets/img/home-one/4.jpeg" alt="About" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-item about-right">
+            <img src="/assets/img/home-one/5.png" alt="About" />
+            <h2>About Our Hospital</h2>
+            <p>
+              Welcome to Delhi Hospital, a NABH Grade 2 certified multispecialty healthcare institution renowned for its
+              pioneering
+              expertise in orthopedics. Strategically located in the heart of haryana we have been committed to
+              delivering exceptional
+              healthcare services to our community.
+
+            </p>
+            <p>Our hospital stands out as a leader in orthopedic care, offering advanced treatments for joint
+              replacements, fractures,
+              spine surgeries, and sports injuries. Equipped with state-of-the-art facilities, including an in-house
+              diagnostic lab
+              and cutting-edge testing infrastructure, we ensure seamless and accurate care under one roof.
+            </p>
+            <p>Delhi Hospital is proud to be a part of the government healthcare panel, further extending our services
+              to a wider
+              demographic. Beyond orthopedics, we provide comprehensive care across multiple specialties, ensuring
+              holistic treatment
+              for patients of all ages.
+            </p>
+            <p>Our team of highly skilled doctors, compassionate nurses, and dedicated staff work tirelessly to deliver
+              personalized
+              treatment plans, ensuring each patient’s journey to recovery is smooth and efficient.
+            </p>
+            <p>At Delhi Hospital, your health is our priority. Together, let’s build a healthier</p>
+            <a href="/about">Know More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End About -->
+
+  <!-- Services -->
+  <section class="services-area pb-70">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Hospital Services</h2>
+      </div>
+      <div class="row justify-content-center">
+        <% services.forEach((service, index)=> { %>
+          <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
+            <div class="service-item">
+              <div class="service-front">
+                <img height="50px" width="50px" src="/uploads/<%= service.servicesImage %>" alt="Services" />
+                <h3>
+                  <%= service.title %>
+                </h3>
+                <p class="services_description_truncate"><%- service.description %></p>
+              </div>
+              <div class="service-end">
+                <img height="50px" width="50px" src="/uploads/<%= service.servicesImage %>" alt="Services" />
+                <h3>
+                  <%= service.title %>
+                </h3>
+                <p class="services_description_truncate"><%- service.description %></p>
+                <a href="/service-details/<%= service.id%>">Read More</a>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+  </section>
+  <!-- End Services -->
+
+  <!-- Expertise -->
+  <section class="expertise-area pb-70">
+    <div class="container">
+      <div class="section-title">
+        <h2>Facility Available</h2>
+      </div>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6">
+          <div class="expertise-item">
+            <div class="row justify-content-center">
+              <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="/blog">
+                  <div class="expertise-inner">
+                    <i class="icofont-doctor-alt"></i>
+                    <h3>Certified Doctors</h3>
+                    <p>
+                      Our team of certified doctors is dedicated to providing the
+                      highest standard of medical care to our patients.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                <a href="/blog">
+                  <div class="expertise-inner">
+                    <i class="icofont-stretcher"></i>
+                    <h3>Emergency</h3>
+                    <p>
+                      We offer 24/7 emergency services to ensure immediate medical
+                      attention for critical cases.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".3s">
+                <a href="/blog">
+                  <div class="expertise-inner">
+                    <i class="icofont-network"></i>
+                    <h3>Technology</h3>
+                    <p>
+                      Equipped with cutting-edge medical technology to deliver
+                      accurate diagnoses and advanced treatments.
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-sm-6 col-lg-6 wow fadeInUp" data-wow-delay=".5s">
+                <a href="/blog">
+                  <div class="expertise-inner">
+                    <i class="icofont-ambulance-cross"></i>
+                    <h3>Ambulance</h3>
+                    <p>
+                      Our well-equipped ambulances ensure timely transportation
+                      and on-the-spot medical care for emergencies.
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="expertise-item">
+            <div class="expertise-right">
+              <img class="h-100 rounded-3" src="/assets/img/home-one/6.jpeg" alt="Expertise" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Expertise -->
+
+  <!-- Video 
+    <div class="video-wrap">
+        <div class="container-fluid p-0">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="video-area">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <div class="container">
+                                    <div class="video-item">
+                                        <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <i class="icofont-ui-play"></i>
+                                        </a>
+                                        <div class="video-content">
+                                            <h3>Hospital Introduction</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                                lacus vel facilisis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="video-area">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <div class="container">
+                                    <div class="video-item">
+                                        <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <i class="icofont-ui-play"></i>
+                                        </a>
+                                        <div class="video-content">
+                                            <h3>About Our Pharmacy</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                                lacus vel facilisis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="video-area">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <div class="container">
+                                    <div class="video-item">
+                                        <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <i class="icofont-ui-play"></i>
+                                        </a>
+                                        <div class="video-content">
+                                            <h3>Our reasearch center and lab </h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                                lacus vel facilisis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-icu" role="tabpanel" aria-labelledby="pills-icu-tab">
+                    <div class="video-area">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <div class="container">
+                                    <div class="video-item">
+                                        <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <i class="icofont-ui-play"></i>
+                                        </a>
+                                        <div class="video-content">
+                                            <h3>CCU & ICU</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                                lacus vel facilisis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-doctor" role="tabpanel" aria-labelledby="pills-doctor-tab">
+                    <div class="video-area">
+                        <div class="d-table">
+                            <div class="d-table-cell">
+                                <div class="container">
+                                    <div class="video-item">
+                                        <a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="popup-youtube">
+                                            <i class="icofont-ui-play"></i>
+                                        </a>
+                                        <div class="video-content">
+                                            <h3>Our Doctors</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+                                                suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                                                lacus vel facilisis. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <ul class="video-nav nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item video-nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab"
+                        aria-controls="pills-home" aria-selected="true">Hospital Introduction</a>
+                </li>
+                <li class="nav-item video-nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile" role="tab"
+                        aria-controls="pills-profile" aria-selected="false">Pharmacy</a>
+                </li>
+                <li class="nav-item video-nav-item">
+                    <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab"
+                        aria-controls="pills-contact" aria-selected="false">Reasearch & Lab</a>
+                </li>
+
+                <li class="nav-item video-nav-item">
+                    <a class="nav-link" id="pills-icu-tab" data-bs-toggle="pill" href="#pills-icu" role="tab"
+                        aria-controls="pills-icu" aria-selected="false">CCU & ICU</a>
+                </li>
+                <li class="nav-item video-nav-item">
+                    <a class="nav-link" id="pills-doctor-tab" data-bs-toggle="pill" href="#pills-doctor" role="tab"
+                        aria-controls="pills-doctor" aria-selected="false">Doctors</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    End Video -->
+
+  <!-- Doctors -->
+  <section class="doctors-area ptb-100">
+    <div class="container">
+      <div class="section-title">
+        <h2>Meet Our Doctors</h2>
+      </div>
+      <div class="row justify-content-center">
+        <% doctors.slice(0, 3).forEach((doctor, index)=> { %>
+          <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+            <div class="doctor-item">
+              <div class="doctor-top">
+                <img class="w-100 meet_doctor_img" src="/uploads/<%= doctor.doctorImage %>" alt="Doctor" />
+                <a href="/appointment">Get Appointment</a>
+              </div>
+              <div class="doctor-bottom">
+                <h3>
+                  <a href="/doctor-details/<%=doctor.id %>">
+                    <%= doctor.name %>
+                  </a>
+                </h3>
+                <span>
+                  <%= doctor.specialist %>
+                </span>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+      <div class="doctor-btn">
+        <a href="/doctor">See All</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Doctors -->
+
+  <!-- Blog -->
+  <section class="blog-area pt-100 pb-70">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Latest Blogs</h2>
+      </div>
+      <div class="row justify-content-center">
+        <% blogs.slice(0, 3).forEach((blog)=> { %>
+          <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+            <div class="blog-item">
+              <div class="blog-top">
+                <a href="/blog-details">
+                  <img class="blog_image" src="/uploads/<%= blog.blogImage %>" alt="Blog" />
+                </a>
+              </div>
+              <div class="blog-bottom">
+                <h3>
+                  <a href="/blog-details">
+                    <%= blog.title %>
+                  </a>
+                </h3>
+                <p><%- blog.description %></p>
+                <ul>
+                  <li>
+                    <a href="/blog-details/<%= blog.id  %>">
+                      Read More
+                      <i class="icofont-long-arrow-right"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <i class="icofont-calendar"></i>
+                    <%= new Date(blog.created).toLocaleDateString() %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Blog -->
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <!-- Meanmenu JS -->
+  <script src="assets/js/jquery.meanmenu.js"></script>
+  <!-- Slider Slider JS -->
+  <script src="assets/js/slick.min.js"></script>
+  <!-- Magnific Popup -->
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <!-- Wow JS -->
+  <script src="assets/js/wow.min.js"></script>
+  <!-- Form Ajaxchimp JS -->
+  <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+  <!-- Form Validator JS -->
+  <script src="assets/js/form-validator.min.js"></script>
+  <!-- Contact JS -->
+  <script src="assets/js/contact-form-script.js"></script>
+  <!-- Odometer JS -->
+  <script src="assets/js/odometer.min.js"></script>
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/custom.js"></script>
+  <%- include("../layout/ui_footer.ejs") %>

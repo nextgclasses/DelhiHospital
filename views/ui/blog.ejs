@@ -1,0 +1,84 @@
+     <%- include('../layout/ui_header.ejs') %>
+     <!-- Page Title -->
+        <div class="page-title-area page-title-four">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="page-title-item">
+                        <h2>Our Latest Blogs</h2>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <i class="icofont-simple-right"></i>
+                            </li>
+                            <li>Blogs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Title -->
+
+      <!-- Blog -->
+<section class="blog-area-two pt-100">
+    <div class="container">
+        <div class="row justify-content-center">
+           <% blogs.forEach((blog) => { %>
+      <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+        <div class="blog-item">
+          <div class="blog-top">
+            <a href="/blog-details">
+              <img class="blog_image"  src="/uploads/<%= blog.blogImage %>" alt="Blog" />
+            </a>
+          </div>
+          <div class="blog-bottom">
+            <h3>
+              <a href="/blog-details"> <%= blog.title %> </a>
+            </h3>
+            <div class="text-truncate-lines">
+              <p><%- blog.description %></p>
+            </div>
+            <ul class="mt-5">
+              <li>
+                <a href="/blog-details/<%= blog.id %>">
+                  Read More
+                  <i class="icofont-long-arrow-right"></i>
+                </a>
+              </li>
+              <li>
+                <i class="icofont-calendar"></i>
+                <%= new Date(blog.created).toLocaleDateString() %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+        </div>
+    </div>
+</section>
+<!-- End Blog -->
+
+
+     <script src="assets/js/owl.carousel.min.js"></script>
+     <!-- Meanmenu JS -->
+    <script src="assets/js/jquery.meanmenu.js"></script>
+    <!-- Slider Slider JS -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Wow JS -->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Form Ajaxchimp JS -->
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Form Validator JS -->
+    <script src="assets/js/form-validator.min.js"></script>
+    <!-- Contact JS -->
+    <script src="assets/js/contact-form-script.js"></script>
+    <!-- Odometer JS -->
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/jquery.appear.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/custom.js"></script>
+ <%- include("../layout/ui_footer.ejs") %>
