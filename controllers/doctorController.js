@@ -1,18 +1,21 @@
 const Doctor = require("../models/doctorModel");
 const path = require("path");
 const fs = require("fs");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Doctor controller function
 const addDoctor = async (req, res) => {
   if (!req.file) {
     return res.json({ message: "Image upload failed", type: "danger" });
   }
+        const response=await uploadOnCloudinary(req.file.filename)
+  
   try {
     const doctor = new Doctor({
       name: req.body.name,
       description: req.body.description,
       specialist: req.body.specialist,
-      doctorImage: req.file.filename,
+      doctorImage: response,
     });
 
     await doctor.save();
@@ -54,16 +57,18 @@ const updateDoctor = async (req, res) => {
 
   try {
     if (req.file) {
-      new_image = req.file.filename;
-      try {
-        fs.unlink("./uploads" + req.body.old_image, (err) => {
-          if (err) {
-            console.log("Error occurred unlinking doctor images", err.message);
-          } 
-        })
-      } catch (err) {
-        console.log(err);
-      }
+      const response=await uploadOnCloudinary(req.file.filename)
+      
+      new_image = response;
+      // try {
+      //   fs.unlink("./uploads" + req.body.old_image, (err) => {
+      //     if (err) {
+      //       console.log("Error occurred unlinking doctor images", err.message);
+      //     } 
+      //   })
+      // } catch (err) {
+      //   console.log(err);
+      // }
     } else {
       new_image = req.body.old_image;
     }
