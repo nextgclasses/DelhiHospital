@@ -1,17 +1,20 @@
 const Department = require("../models/departmentModel");
 const path = require("path");
 const fs = require("fs");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Department 
 const addDepartment = async (req, res) => {
   if (!req.file) {
     return res.json({ message: "Image upload failed", type: "danger" });
   }
+    const response=await uploadOnCloudinary(req.file.filename)
+  
   try {
     const department = new Department({
       title: req.body.title,
       description: req.body.description,
-      departmentImage: req.file.filename,
+      departmentImage: response,
     });
 
     await department.save();
