@@ -202,7 +202,7 @@
             <img
               height="50px"
               width="50px"
-              src="/uploads/<%= service.servicesImage %>"
+              src="<%= service.servicesImage %>"
               alt="Services"
             />
             <h3><%= service.title %></h3>
@@ -212,7 +212,7 @@
             <img
                height="50px"
               width="50px"
-              src="/uploads/<%= service.servicesImage %>"
+              src="<%= service.servicesImage %>"
               alt="Services"
             />
             <h3><%= service.title %></h3>
@@ -237,7 +237,7 @@
         <% testimonials.forEach((testimonial)=>{ %>
         <div class="testimonial-item">
           <img height="100" width="100"
-           src="/uploads/<%= testimonial.testimonialImage %>"
+           src="<%= testimonial.testimonialImage %>"
             alt="Testimonial"
           />
           <h3><%= testimonial.name %></h3>
@@ -262,7 +262,7 @@
         <div class="blog-item">
           <div class="blog-top">
             <a href="/blog-details/<%= blog.id %>">
-              <img class="blog_image"  src="/uploads/<%= blog.blogImage %>" alt="Blog" />
+              <img class="blog_image"  src="<%= blog.blogImage %>" alt="Blog" />
             </a>
           </div>
           <div class="blog-bottom">

@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const upload = require("../middlewares/multerMiddleware");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Render Site Settings page
 const siteSettingsPage = async (req, res) => {
@@ -40,6 +41,7 @@ const siteSettingsDisplayPage = async (req, res) => {
 //======================================================================== Add Site Setting
 const addSiteSetting = async (req, res) => {
   try {
+      const response=await uploadOnCloudinary(req.file.filename)
   
     const siteSettingData = {
       email: req.body.email,
@@ -49,7 +51,7 @@ const addSiteSetting = async (req, res) => {
       twitter: req.body.twitter,
       pinterest: req.body.pinterest,
       instagram: req.body.instagram,
-      logo: req.file.filename, 
+      logo: response, 
     };
 
     // Check if a site setting already exists
@@ -86,21 +88,23 @@ const addSiteSetting = async (req, res) => {
 const updateSiteSetting = async (req, res) => {
   try {
     const id = req.params.id;
-
+    
     let newLogo = "";
+    
     if (req.file) {
-      newLogo = req.file.filename;
+      const response=await uploadOnCloudinary(req.file.filename)
+      newLogo = response;
 
-      // Delete the old logo if it exists
-      const setting = await SiteSetting.findById(id);
-      if (setting && setting.logo) {
-        const oldLogoPath = path.join(__dirname, "..", "uploads", setting.logo);
-        try {
-          fs.unlinkSync(oldLogoPath);
-        } catch (err) {
-          console.error("Error deleting old logo:", err);
-        }
-      }
+      // // Delete the old logo if it exists
+      // const setting = await SiteSetting.findById(id);
+      // if (setting && setting.logo) {
+      //   const oldLogoPath = path.join(__dirname, "..", "uploads", setting.logo);
+      //   try {
+      //     fs.unlinkSync(oldLogoPath);
+      //   } catch (err) {
+      //     console.error("Error deleting old logo:", err);
+      //   }
+      // }
     }
 
     const updatedData = {

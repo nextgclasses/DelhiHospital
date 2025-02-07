@@ -129,7 +129,7 @@
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
       <a href="/" class="logo">
-        <img class="rounded-circle" src="/uploads/<%= siteSettings[0].logo %>" alt="Logo" style="width: 80px" />
+        <img class="rounded-circle" src="<%= siteSettings[0].logo %>" alt="Logo" style="width: 80px" />
       </a>
     </div>
 
@@ -138,7 +138,7 @@
       <div class="container">
         <nav class="navbar navbar-expand-md navbar-light">
           <a class="navbar-brand" href="/">
-            <img class="rounded-circle" src="/uploads/<%= siteSettings[0].logo %>" alt="Logo" />
+            <img class="rounded-circle" src="<%= siteSettings[0].logo %>" alt="Logo" />
           </a>
           <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
             <ul class="navbar-nav">
@@ -213,7 +213,7 @@
   <div class="service-details-area ptb-100">
     <div class="container">
       <div class="services-details-img">
-        <img style="max-height: 350px;object-fit: contain;" src="/uploads/<%= service.servicesImage %>"
+        <img style="max-height: 350px;object-fit: contain;" src="<%= service.servicesImage %>"
           alt="Service Details" />
         <h2>
           <%= service.title %>
@@ -241,7 +241,7 @@
             <div class="blog-item">
               <div class="blog-top">
                 <a href="/blog-details">
-                  <img src="/uploads/<%= blog.blogImage %>" alt="Blog" />
+                  <img src="<%= blog.blogImage %>" alt="Blog" />
                 </a>
               </div>
               <div class="blog-bottom">

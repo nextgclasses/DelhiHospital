@@ -135,7 +135,7 @@
         <!-- Menu For Mobile Device -->
         <div class="mobile-nav">
             <a href="/" class="logo">
-                <img class="rounded-circle" src="/uploads/<%= siteSettings[0].logo %>" alt="Logo" style="width: 80px" />
+                <img class="rounded-circle" src="<%= siteSettings[0].logo %>" alt="Logo" style="width: 80px" />
             </a>
         </div>
 
@@ -144,7 +144,7 @@
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="/">
-                        <img class="rounded-circle" src="/uploads/<%= siteSettings[0].logo %>" alt="Logo" />
+                        <img class="rounded-circle" src="<%= siteSettings[0].logo %>" alt="Logo" />
                     </a>
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul class="navbar-nav">
@@ -201,7 +201,7 @@
     <section class="vs-service-wrapper space-top space-md-bottom">
         <div class="position-relative">
             <% if (pageImage) { %>
-                <img class="w-100" src="/uploads/<%= pageImage %>" alt="<%= heading || 'Image' %>">
+                <img class="w-100" src="<%= pageImage %>" alt="<%= heading || 'Image' %>">
                 <% } %>
                     <article class="position-absolute fs-2 top-50 start-50 translate-middle-x">
                         <%- description || 'No description available.' %>

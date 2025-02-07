@@ -6,7 +6,7 @@
             <div class="slider-item-img">
 
                 <!-- If the slider has a unique image, use it dynamically -->
-                <img class="w-100" src="/uploads/<%= slider.sliderImage %>" alt="Shape" />
+                <img class="w-100" src="<%= slider.sliderImage %>" alt="Shape" />
 
             </div>
             <% }) %>
@@ -225,7 +225,7 @@
                     <div class="col-sm-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
                         <div class="service-item">
                             <div class="service-front">
-                                <img height="50px" width="50px" src="/uploads/<%= service.servicesImage %>"
+                                <img height="50px" width="50px" src="<%= service.servicesImage %>"
                                     alt="Services" />
                                 <h3>
                                     <%= service.title %>
@@ -233,7 +233,7 @@
                                 <p class="services_description_truncate"><%- service.description %></p>
                             </div>
                             <div class="service-end">
-                                <img height="50px" width="50px" src="/uploads/<%= service.servicesImage %>"
+                                <img height="50px" width="50px" src="<%= service.servicesImage %>"
                                     alt="Services" />
                                 <h3>
                                     <%= service.title %>
@@ -478,7 +478,7 @@
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
                         <div class="doctor-item">
                             <div class="doctor-top">
-                                <img class="w-100 meet_doctor_img" src="/uploads/<%= doctor.doctorImage %>"
+                                <img class="w-100 meet_doctor_img" src="<%= doctor.doctorImage %>"
                                     alt="Doctor" />
                                 <a href="/appointment">Get Appointment</a>
                             </div>
@@ -515,7 +515,7 @@
                         <div class="blog-item">
                             <div class="blog-top">
                                 <a href="/blog-details">
-                                    <img class="blog_image" src="/uploads/<%= blog.blogImage %>" alt="Blog" />
+                                    <img class="blog_image" src="<%= blog.blogImage %>" alt="Blog" />
                                 </a>
                             </div>
                             <div class="blog-bottom">
