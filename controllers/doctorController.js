@@ -10,7 +10,7 @@ const addDoctor = async (req, res) => {
   try {
     const doctor = new Doctor({
       name: req.body.name,
-      description:req.body.description,
+      description: req.body.description,
       specialist: req.body.specialist,
       doctorImage: req.file.filename,
     });
@@ -56,7 +56,11 @@ const updateDoctor = async (req, res) => {
     if (req.file) {
       new_image = req.file.filename;
       try {
-        fs.unlinkSync("./uploads" + req.body.old_image);
+        fs.unlink("./uploads" + req.body.old_image, (err) => {
+          if (err) {
+            console.log("Error occurred unlinking doctor images", err.message);
+          } 
+        })
       } catch (err) {
         console.log(err);
       }
@@ -93,7 +97,7 @@ const deleteDoctor = async (req, res) => {
     }
     const imagePath = path.join(__dirname, "..", "uploads", doctor.doctorImage);
     try {
-      fs.unlinkSync(imagePath); 
+      fs.unlinkSync(imagePath);
     } catch (err) {
       console.log("Error deleting image:", err);
     }

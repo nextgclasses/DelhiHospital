@@ -4776,7 +4776,7 @@ footer {
 
 .meet_doctor_img {
   height: 400px;
-  object-fit: 100% 100%;
+  object-fit: cover;
 }
 
 .admin_nav_bg {

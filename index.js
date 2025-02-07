@@ -18,7 +18,10 @@ const app = express();
 // Define the port
 const port = process.env.PORT;
 const host = process.env.HOST;
+// Middleware for parsing form data and JSON
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 // Connect to the MongoDB database
 mongoose
   .connect(process.env.DB_URL)
@@ -29,9 +32,7 @@ mongoose
     console.error("Database connection error:", error.message);
   });
 
-// Middleware for parsing form data and JSON
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+
 
 // Middleware for handling sessions
 app.use(

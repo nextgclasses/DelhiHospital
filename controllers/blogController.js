@@ -1,17 +1,23 @@
 const Blog = require("../models/blogModel");
 const path = require("path");
 const fs = require("fs");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Blog controller function
 const addBlog = async (req, res) => {
+
   if (!req.file) {
     return res.json({ message: "Image upload failed", type: "danger" });
   }
+
+  const response=await uploadOnCloudinary(req.file.filename)
+
   try {
     const blog = new Blog({
       title: req.body.title,
       description: req.body.description,
-      blogImage: req.file.filename,
+      // blogImage: req.file.filename,
+      blogImage:response,
       seoTitle: req.body.seoTitle,
       seoKeywords: req.body.seoKeywords,
       seoDescription: req.body.seoDescription,

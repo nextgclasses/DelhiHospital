@@ -3,7 +3,7 @@ import fs from "fs"
 // Configuration
 cloudinary.config({
     cloud_name: process.env.CLOUDIARY_CLOUD_NAME,
-    api_key: CLOUDIARY_API_KEY,
+    api_key: process.env.CLOUDIARY_API_KEY,
     api_secret: process.env.CLOUDIARY_API_SECRET_KEY
 });
 
@@ -16,21 +16,30 @@ export const uploadOnCloudinary = async (localFilePath) => {
 
         const uploadResult = await cloudinary.uploader
             .upload(
-                localFilePath, {
+                "./uploads/"+ localFilePath, {
                 resource_type: 'auto'
             }
             )
+
+        fs.unlink("./uploads/" + localFilePath, (err) => {
+            if (err) {
+                console.error("cloudinary Error deleting file:", err);
+            }
+        })
+
+        console.log("uploaded photo successfully on cloudinary: ", uploadResult.url);
+
         return uploadResult.url
 
     } catch (error) {
-        fs.unlink(localFilePath, (err) => {
+        fs.unlink("./uploads/" + localFilePath, (err) => {
             if (err) {
-                console.error("Error deleting file:", err);
+                console.error(" cloudinary Error deleting file:", err);
             } else {
                 console.log("Local file deleted successfully");
             }
         })
-        console.log(error);
+        console.log("cloudinary error: ", error);
         return null;
     }
 }
