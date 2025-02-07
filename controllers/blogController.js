@@ -64,12 +64,10 @@ const updateBlog = async (req, res) => {
 
   try {
     if (req.file) {
-      new_image = req.file.filename;
-      try {
-        fs.unlinkSync("./uploads" + req.body.old_image);
-      } catch (err) {
-        console.log(err);
-      }
+      const response = await uploadOnCloudinary(req.file.filename)
+
+      new_image = response;
+   
     } else {
       new_image = req.body.old_image;
     }
@@ -102,12 +100,7 @@ const deleteBlog = async (req, res) => {
     if (!blog) {
       return res.status(404).send("Blog not found");
     }
-    const imagePath = path.join(__dirname, "..", "uploads", blog.blogImage);
-    try {
-      fs.unlinkSync(imagePath);
-    } catch (err) {
-      console.log("Error deleting image:", err);
-    }
+ 
     await Blog.findByIdAndDelete(req.params.id);
     req.session.message = {
       type: "success",

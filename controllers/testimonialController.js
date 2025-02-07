@@ -1,6 +1,7 @@
 const Testimonial = require("../models/testimonialsModel");
 const path = require("path");
 const fs = require("fs");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Testimonial Controller
 const addTestimonial = async (req, res) => {
@@ -9,12 +10,13 @@ const addTestimonial = async (req, res) => {
       .status(400)
       .json({ message: "Image upload failed", type: "danger" });
   }
+            const response = await uploadOnCloudinary(req.file.filename)
 
   try {
     const testimonial = new Testimonial({
       name: req.body.name,
       description: req.body.description,
-      testimonialImage: req.file.filename,
+      testimonialImage: response,
     });
 
     await testimonial.save();
@@ -63,17 +65,8 @@ const updateTestimonial = async (req, res) => {
 
   try {
     if (req.file) {
-      newImage = req.file.filename;
-
-      const oldImagePath = path.join(
-        __dirname,
-        "..",
-        "uploads",
-        req.body.old_image
-      );
-      if (fs.existsSync(oldImagePath)) {
-        fs.unlinkSync(oldImagePath);
-      }
+      const response = await uploadOnCloudinary(req.file.filename)
+      newImage = response;
     } else {
       newImage = req.body.old_image;
     }
@@ -103,16 +96,6 @@ const deleteTestimonial = async (req, res) => {
 
     if (!testimonial) {
       return res.status(404).json({ message: "Testimonial not found" });
-    }
-
-    const imagePath = path.join(
-      __dirname,
-      "..",
-      "uploads",
-      testimonial.testimonialImage
-    );
-    if (fs.existsSync(imagePath)) {
-      fs.unlinkSync(imagePath);
     }
 
     await Testimonial.findByIdAndDelete(req.params.id);

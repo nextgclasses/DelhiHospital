@@ -8,8 +8,8 @@ const addDepartment = async (req, res) => {
   if (!req.file) {
     return res.json({ message: "Image upload failed", type: "danger" });
   }
-    const response=await uploadOnCloudinary(req.file.filename)
-  
+  const response = await uploadOnCloudinary(req.file.filename)
+
   try {
     const department = new Department({
       title: req.body.title,
@@ -58,12 +58,10 @@ const updateDepartment = async (req, res) => {
 
   try {
     if (req.file) {
-      new_image = req.file.filename;
-      try {
-        fs.unlinkSync("./uploads" + req.body.old_image);
-      } catch (err) {
-        console.log(err);
-      }
+      const response = await uploadOnCloudinary(req.file.filename)
+
+      new_image = response;
+
     } else {
       new_image = req.body.old_image;
     }
@@ -92,18 +90,6 @@ const deleteDepartment = async (req, res) => {
       return res.status(404).send("Department not found");
     }
 
-    const imagePath = path.join(
-      __dirname,
-      "..",
-      "uploads",
-      department.departmentImage
-    );
-
-    try {
-      fs.unlinkSync(imagePath);
-    } catch (err) {
-      console.log("Error deleting image:", err);
-    }
 
     await Department.findByIdAndDelete(req.params.id);
 

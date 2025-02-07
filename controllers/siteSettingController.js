@@ -1,6 +1,4 @@
 const SiteSetting = require("../models/siteSettingModel");
-const path = require("path");
-const fs = require("fs");
 
 const upload = require("../middlewares/multerMiddleware");
 const { uploadOnCloudinary } = require("../utils/cloudinary");

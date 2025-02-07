@@ -1,6 +1,4 @@
 const Slider = require("../models/sliderModel");
-const fs = require("fs");
-const path = require("path");
 const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Slider 
@@ -98,17 +96,6 @@ const deleteSlider = async (req, res) => {
     if (!slider) {
       return res.status(404).send("Slider not found");
     }
-
-    // Get the image file path from the slider object
-    const imagePath = path.join(__dirname, '..', 'uploads', slider.sliderImage);
-
-    // Delete the image file from the server
-    try {
-      fs.unlinkSync(imagePath); // Delete the file from the uploads folder
-    } catch (err) {
-      console.log('Error deleting image:', err);
-    }
-
     // Now delete the slider record from the database
     await Slider.findByIdAndDelete(req.params.id);
 

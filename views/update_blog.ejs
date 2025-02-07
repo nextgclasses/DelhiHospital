@@ -248,21 +248,21 @@
                 <div class="mb-3">
                   <label for="seoTitle" class="form-label">SEO Title</label>
                   <input type="text" name="seoTitle" class="form-control" id="seoTitle"
-                    value="<%= service.seoTitle || '' %>" placeholder="Enter SEO Title">
+                    value="<%= blog.seoTitle || '' %>" placeholder="Enter SEO Title">
                 </div>
 
                 <!-- SEO Keywords Input -->
                 <div class="mb-3">
                   <label for="seoKeywords" class="form-label">SEO Keywords</label>
                   <input type="text" name="seoKeywords" class="form-control" id="seoKeywords"
-                    value="<%= service.seoKeywords || '' %>" placeholder="Enter SEO Keywords">
+                    value="<%= blog.seoKeywords || '' %>" placeholder="Enter SEO Keywords">
                 </div>
 
                 <!-- SEO Description Input (with TinyMCE Editor) -->
                 <div class="mb-3">
                   <label for="seoDescription" class="form-label">SEO Description</label>
                   <textarea name="seoDescription" class="form-control" id="seoDescription" rows="1"
-                    placeholder="Enter SEO Description"><%= service.seoDescription || '' %></textarea>
+                    placeholder="Enter SEO Description" value="<%= blog.seoDescription || '' %>"></textarea>
 
                 </div>
                 <!-- Submit Button -->
