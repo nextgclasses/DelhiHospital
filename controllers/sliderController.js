@@ -1,16 +1,18 @@
 const Slider = require("../models/sliderModel");
 const fs = require("fs");
 const path = require("path");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Slider 
 const addSlider = async (req, res) => {
   if (!req.file) {
     return res.json({ message: "Image upload failed", type: "danger" });
   }
+      const response = await uploadOnCloudinary(req.file.filename)
 
   try {
     const slider = new Slider({
-      sliderImage: req.file.filename,
+      sliderImage: response,
       title: req.body.title, 
       description: req.body.description, 
     });
@@ -41,13 +43,10 @@ const updateSlider = async (req, res) => {
   try {
     // Check if a new image is uploaded
     if (req.file) {
-      new_image = req.file.filename;
-      // Optionally delete the old image from the server
-      try {
-        fs.unlinkSync("./uploads" + req.body.old_image);
-      } catch (err) {
-        console.log(err);
-      }
+            const response = await uploadOnCloudinary(req.file.filename)
+      
+      new_image = response;
+     
     } else {
       new_image = req.body.old_image;
     }

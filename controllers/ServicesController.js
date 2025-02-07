@@ -1,17 +1,20 @@
 const Service = require("../models/servicesModel");
 const path = require("path");
 const fs = require("fs");
+const { uploadOnCloudinary } = require("../utils/cloudinary");
 
 //======================================================================== Add Service controller function
 const addServices = async (req, res) => {
   if (!req.file) {
     return res.json({ message: "Image upload failed", type: "danger" });
   }
+  const response = await uploadOnCloudinary(req.file.filename)
+
   try {
     const service = new Service({
       title: req.body.title,
       description: req.body.description,
-      servicesImage: req.file.filename,
+      servicesImage: response,
       seoTitle: req.body.seoTitle,
       seoKeywords: req.body.seoKeywords,
       seoDescription: req.body.seoDescription,
@@ -58,12 +61,14 @@ const updateServices = async (req, res) => {
 
   try {
     if (req.file) {
-      new_image = req.file.filename;
-      try {
-        fs.unlinkSync("./uploads" + req.body.old_image);
-      } catch (err) {
-        console.log(err);
-      }
+      const response = await uploadOnCloudinary(req.file.filename)
+
+      new_image = response;
+      // try {
+      //   fs.unlinkSync("./uploads" + req.body.old_image);
+      // } catch (err) {
+      //   console.log(err);
+      // }
     } else {
       new_image = req.body.old_image;
     }

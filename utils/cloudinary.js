@@ -16,7 +16,7 @@ export const uploadOnCloudinary = async (localFilePath) => {
 
         const uploadResult = await cloudinary.uploader
             .upload(
-                "./uploads/"+ localFilePath, {
+                "./uploads/" + localFilePath, {
                 resource_type: 'auto'
             }
             )
@@ -27,7 +27,6 @@ export const uploadOnCloudinary = async (localFilePath) => {
             }
         })
 
-        console.log("uploaded photo successfully on cloudinary: ", uploadResult.url);
 
         return uploadResult.url
 
